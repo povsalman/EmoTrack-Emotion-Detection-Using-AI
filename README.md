@@ -32,7 +32,7 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/emotrack.git
+   git clone https://github.com/povsalman/EmoTrack-Emotion-Detection-Using-AI.git
    cd emotrack
    ```
 
@@ -61,7 +61,7 @@
 1. Open the Jupyter Notebook:
 
    ```bash
-   jupyter notebook emotion_detection_workflow.ipynb
+   jupyter notebook Model_code.ipynb
    ```
 
 2. Run cells sequentially:
@@ -93,7 +93,4 @@
 - Training may take time; use a GPU for faster results.
 - Ensure OpenCV’s Haar Cascade (`haarcascade_frontalface_default.xml`) is accessible.
 - Accuracy depends on dataset quality and hardware; fine-tuning (optional) can boost performance.
-
-## License
-
-MIT License
+- Another version of code is also provide named `new_code.ipynb` with model `new_best_emotion_model.h5`
