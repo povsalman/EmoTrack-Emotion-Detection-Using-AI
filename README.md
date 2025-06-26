@@ -5,7 +5,7 @@
 ## Features
 
 - **Dataset:** Uses FER2013 dataset (~28,709 train, ~7,178 test images) with 48x48 grayscale images.
-- **Model:** MobileNetV2 with ImageNet weights, custom head (Dense 128 → 64 → 7), achieving ~0.60–0.70 test accuracy.
+- **Model:** MobileNetV2 with ImageNet weights, custom head (Dense 128 → 64 → 7), achieving ~41% test accuracy.
 - **Preprocessing:** Converts grayscale to RGB, resizes to 224x224, normalizes with `MobileNetV2`'s `preprocess_input`.
 - **Augmentation:** Applies rotation, zoom, flip, and shifts to training data.
 - **Training:** Uses Adam optimizer, class weights for imbalance, early stopping, and learning rate scheduling.
@@ -61,7 +61,7 @@
 1. Open the Jupyter Notebook:
 
    ```bash
-   jupyter notebook Model_code.ipynb
+   jupyter notebook base_code.ipynb
    ```
 
 2. Run cells sequentially:
@@ -71,26 +71,26 @@
    - Preprocess data
    - Create train/validate/test generators (70/30 train split)
    - Build MobileNetV2 model
-   - Train model (12 epochs, saves `best_emotion_model.h5`)
+   - Train model (12 epochs, saves `base_best_emotion_model.h5`)
    - Evaluate model (prints metrics, plots confusion matrix)
    - Run webcam inference (press `'q'` to exit, saves logs in `./logs/`)
    - Visualize emotion frequency from logs
 
 3. **Outputs:**
-   - Model: `./best_emotion_model.h5`
+   - Model: `./base_best_emotion_model.h5`
    - Logs: `./logs/emotion_log_*.csv`
    - Plots: Displayed in notebook
 
 ## File Structure
 
-- `emotion_detection_workflow.ipynb`: Main Jupyter Notebook with all steps
+- `base_code.ipynb`: Main Jupyter Notebook with all steps
 - `dataset/`: FER2013 dataset (not included, user-provided)
 - `logs/`: Emotion prediction logs (generated during inference)
-- `best_emotion_model.h5`: Trained model (generated after training)
+- `base_best_emotion_model.h5`: Trained model (generated after training)
 
 ## Notes
 
 - Training may take time; use a GPU for faster results.
 - Ensure OpenCV’s Haar Cascade (`haarcascade_frontalface_default.xml`) is accessible.
 - Accuracy depends on dataset quality and hardware; fine-tuning (optional) can boost performance.
-- Another version of code is also provide named `new_code.ipynb` with model `new_best_emotion_model.h5`
+- Another version of code is also provide named `improved_code.ipynb` with model `improved_best_emotion_model.h5`
